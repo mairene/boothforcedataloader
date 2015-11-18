@@ -1,0 +1,14 @@
+<h1>Salesforce Areas</h1>
+<table>
+    <tr>
+        <th>Name</th><th>Date</th><th>Salesforce Id</th>
+    </tr>
+    <% @areas.each do |area| %>
+    <tr>
+        <td><%= area.name %></td>
+        <td><%= area.createddate.strftime("%d %b %y") %></td>
+        <td><%= area.sfid %></td>
+        <td><%= link_to "details", "/area/#{area.id}" %></td>
+    </tr>
+    <% end %>
+</table>
