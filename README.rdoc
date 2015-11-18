@@ -1,0 +1,45 @@
+== Heroku Connect Rails Demo
+
+The Heroku Connect system synchronizes records in your Salesforce account with
+a relational database. This simple Rails application demonstrates some techniques 
+for accessing Salesforce data from the Heroku Connect database.
+
+This application assumes that you have mapped your Account and Contact objects
+from Salesforce. This results in the "account" and "contact" tables being
+created in the Heroku Connect database.
+
+This application implements ActiveRecord models classes to talk to those tables,
+and adds some simple views for browsing those records.
+
+== Getting Started
+
+1. Sign up for a Heroku Connect account, or add the Heroku Connect addon to your
+Heroku app.
+
+2. Go through the Heroku Connect setup process, and map your Account and Contact
+objects.
+
+3. If you want database changes to be synced to Salesforce, enable "Read/Write"
+mode on your Heroku Connect account.
+
+4. Get your Heroku Connect database credentials and schema name. Set the 
+`HEROKUCONNECT_URL` and `HEROKUCONNNECT_SCHEMA` variables
+in your environment. If you are deploying to heroku, set those values as Config Vars.
+
+5. Run the rails console and use the Account or Contact activerecord models
+to access your data. Or run the Rails server and access http://localhost:3000
+
+== Running the app
+
+Run the Rails server with `rails server` or deploy to Heroku.
+
+Access the home page, then click the _Sign Up_ link. Enter your email and password.
+Now you will be logged in and can access the *Accounts* and *Contacts* pages.
+
+== Accessing your Salesforce data
+
+This sample app provides a re-usable ActiveRecord base class called _SalesforceModel_.
+This abstract base class will connect to the database specified in the Heroku Connect_URL
+environment variable. Any ActiveRecord models to access the Heroku Connect database
+should inherit from this class.
+
