@@ -5,9 +5,9 @@ Cloudconnectdemo::Application.routes.draw do
   # first created -> highest priority.
 
   root :to => 'salesforce#accounts'
-  match '/accounts' => 'salesforce#accounts'
-  match '/account/:id' => 'salesforce#account'
-  match '/contacts' => 'salesforce#contacts'
+  match '/areas' => 'salesforce#areas'
+  match '/area/:id' => 'salesforce#area'
+  match '/booth' => 'salesforce#booths'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
