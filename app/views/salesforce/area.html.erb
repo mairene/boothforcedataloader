@@ -1,17 +1,16 @@
-<h1>Account: <%= @account.name %></h1>
+<h1>Account: <%= @area.name %></h1>
 
-<h2>Contacts</h2>
+<h2>Area:</h2>
 <table border="1">
     <tr>
         <th>id</th><th>Name</th><th>Email</th><th>Phone</th>
     </tr>
-    <% @contacts.each do |contact| %>
-      <% next if contact.nil? %>
+    <% @booths.each do |booth| %>
+      <% next if booth.nil? %>
       <tr>
-          <td><%= contact.id %></td>
-          <td><%= contact.firstname %> <%= contact.lastname %></td>
-          <td><%= contact.email %></td>
-          <td><%= contact.phone %></td>
+          <td><%= booth.id %></td>
+          <td><%= booth.name %></td>
+          <td><%= booth.location %></td>
       </tr>
     <% end %>
 </table>
