@@ -1,27 +1,27 @@
 class SalesforceController < ApplicationController
 
-  def accounts
+  def areas
     @page = (params[:page] || 1).to_i
-    @accounts = Account.order("name").offset(@page*20).limit(20).all()
+    @areas = Area.order("name").offset(@page*20).limit(20).all()
   end
 
-  def account
+  def area
     if params[:id] =~ /^\d+$/
-        @account = Account.find(params[:id])
+        @area = Area.find(params[:id])
     else
-        @account = Account.find_by_sfid(params[:id])
+        @account = Area.find_by_sfid(params[:id])
     end
 
     begin
-      @contacts = @account.contacts
+      @booths = @area.booths
     rescue
-      @contacts = []
+      @booths = []
     end
   end
 
-  def contacts
+  def booths
     @page = (params[:page] || 1).to_i
-    @contacts = Contact.order("lastname").offset(@page*20).limit(20).all()
+    @booths = Booth.order("name").offset(@page*20).limit(20).all()
   end
 
 end

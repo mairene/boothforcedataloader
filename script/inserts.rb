@@ -1,8 +1,7 @@
 # Generate interleaved inserts
 
-400.times do
-	Account.create(:name => "Big Co 600")
-	Contact.create(:firstname => 'Dr', :lastname=>'Rosenpenis')
-	Lead.create(:name=>'Scott Persinger')		
-	Opportunity.create(:name => "This is a great chance at a sale", :stagename=>'Prospecting', :closedate=>'2013-12-31')
+1.times do
+	@area = Area.create(:name => "Big Co 600")
+	Booth.create(:name => 'Dr Rosenpenis', :id => @area.id)
+	Shift.create(:name=>'Scott Persinger', :id => @area.id)		
 end
