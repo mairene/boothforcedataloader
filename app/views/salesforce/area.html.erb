@@ -1,9 +1,9 @@
-<h1>Account: <%= @area.name %></h1>
+<h1>Area: <%= @area.name %></h1>
 
 <h2>Area:</h2>
 <table border="1">
     <tr>
-        <th>id</th><th>Name</th><th>Email</th><th>Phone</th>
+        <th>id</th><th>Name</th><th>Phone</th>
     </tr>
     <% @booths.each do |booth| %>
       <% next if booth.nil? %>
