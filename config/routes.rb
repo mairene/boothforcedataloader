@@ -6,7 +6,7 @@ Cloudconnectdemo::Application.routes.draw do
   root :to => 'salesforce#areas'
   match '/areas' => 'salesforce#areas'
   match '/area/:id' => 'salesforce#area'
-  match '/booth' => 'salesforce#booths'
+  match '/booths' => 'salesforce#booths'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
