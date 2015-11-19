@@ -17,15 +17,16 @@ Boothforce::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  resources :area
-
+  match '/area/new' => 'salesforce#new_area'
+  match '/create_area' => 'salesforce#create_area'
   # Sample resource route with options:
   #   resources :products do
   #     member do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  # POST   /area(.:format)          area#create
+  # new_area GET    /area/new(.:format)      area#new
   #     collection do
   #       get 'sold'
   #     end
