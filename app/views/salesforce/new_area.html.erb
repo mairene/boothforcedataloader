@@ -1,0 +1,31 @@
+<%= form_for :area, url: areas_path do |f| %>
+ 
+  <% if @area.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@area.errors.count, "error") %> prohibited
+        this area from being saved:
+      </h2>
+      <ul>
+        <% @area.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :location__c %><br>
+    <%= f.text_field :location__c %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
