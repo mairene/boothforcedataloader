@@ -19,7 +19,7 @@ class SalesforceController < ApplicationController
   end
 
   def new_area
-
+    @area = Area.new
   end
 
   def create_area
