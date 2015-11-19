@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Cloudconnectdemo::Application.load_tasks
+Boothforce::Application.load_tasks
