@@ -6,7 +6,7 @@
     <% @areas.each do |area| %>
     <tr>
         <td><%= area.name %></td>
-        <td><%= area.createddate.strftime("%d %b %y") %></td>
+        <td><%= area.createddate%></td>
         <td><%= area.sfid %></td>
         <td><%= link_to "details", "/area/#{area.id}" %></td>
     </tr>

@@ -23,12 +23,12 @@ class SalesforceController < ApplicationController
   end
 
   def create_area
-    @area = Area.new(area_params)
+    @area = Area.new(params[:area])
  
     if @area.save
       redirect_to @area
     else
-      render 'new'
+      render 'new_area'
     end
   end
 
@@ -36,8 +36,8 @@ class SalesforceController < ApplicationController
     @booths = Booth.all()
   end
   
-  private
-  def area_params
-    params.require(:area).permit(:name, :location__c)
-  end
+  # private
+  # def area_params
+  #   params.require(:area).permit(:name, :location__c)
+  # end
 end
